@@ -313,7 +313,11 @@
       </div>
       <div class="logo-text">
         <h1>YT Downloader</h1>
+<<<<<<< HEAD
         <p>powered by AYAN</p>
+=======
+        <p>powered by AYAN and ZEERAK</p>
+>>>>>>> 062ae2ca8c5fe4ccf7f9416bafb2edc322af802c
       </div>
     </div>
 
@@ -353,6 +357,7 @@
       </button>
     </div>
 
+<<<<<<< HEAD
     <!-- Quality selector -->
     <div id="qualityGroup">
       <div class="input-label">Video Quality</div>
@@ -364,6 +369,8 @@
       </div>
     </div>
 
+=======
+>>>>>>> 062ae2ca8c5fe4ccf7f9416bafb2edc322af802c
     <button class="dl-btn" id="dlBtn" onclick="startDownload()">
       <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
       Download
@@ -383,6 +390,7 @@
   <script>
     const API = 'http://localhost:5000';
     let currentMode = 'video';
+<<<<<<< HEAD
     let currentQuality = '720';
 
     function setQuality(btn) {
@@ -403,6 +411,14 @@
         qualityGroup.style.display = 'block';
       }
 
+=======
+
+    function setMode(btn) {
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMode = btn.dataset.mode;
+
+>>>>>>> 062ae2ca8c5fe4ccf7f9416bafb2edc322af802c
       // Update placeholder
       const input = document.getElementById('urlInput');
       if (currentMode === 'playlist') {
@@ -467,7 +483,11 @@
         const res = await fetch(`${API}/download`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+<<<<<<< HEAD
           body: JSON.stringify({ url, mode: currentMode, quality: currentQuality })
+=======
+          body: JSON.stringify({ url, mode: currentMode })
+>>>>>>> 062ae2ca8c5fe4ccf7f9416bafb2edc322af802c
         });
 
         const data = await res.json();
